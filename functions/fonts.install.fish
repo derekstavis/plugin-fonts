@@ -30,6 +30,10 @@ function fonts.install -a name
     end
 
     rm -rf $tmpdir
+    return 0
+  else
+    echo 'Could not create temporary directory'
+    return 1
   end
 
 end
