@@ -23,9 +23,10 @@ function fonts.install -a name
 
     mkdir -p $FONTS_PATH
 
-    if not mv $tmpdir/* $FONTS_PATH
+    if not mv $tmpdir/* $FONTS_PATH ^&-
       rm -rf $FONTS_CONFIG/$name
       echo 'Error installing font files'
+      return 1
     end
 
     rm -rf $tmpdir
