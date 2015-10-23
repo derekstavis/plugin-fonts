@@ -1,3 +1,4 @@
 function __fonts.repo.list
-  cat $FONT_MOCK_INDEX | grep '"name"' | sed 's/[",]//g;s/name://g;s/^ *//;s/ *$//'
+  set -l url 'https://api.github.com/repos/google/fonts/contents/ofl'
+  wget -q -O- $url | grep '"name"' | sed 's/[",]//g;s/name://g;s/^ *//;s/ *$//'
 end
