@@ -5,6 +5,11 @@ function fonts.install -a name
     return 1
   end
 
+  if test -e "$FONTS_CONFIG/$name"
+    echo "Font $name already installed"
+    return 1
+  end
+
   if set tmpdir (mktemp -d "/tmp/font-$name.XXXXXX" ^&-)
     if wget -P $tmpdir -q --show-progress -- (__fonts.repo.urls "$name")
       echo 'Fonts downloaded with success'
