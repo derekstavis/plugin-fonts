@@ -19,6 +19,9 @@ function fonts -a action name -d "A simple font manager"
     else
       fonts.remove "$name"
     end
+
+  case help '*'
+    fonts.help
   end
 
 end
