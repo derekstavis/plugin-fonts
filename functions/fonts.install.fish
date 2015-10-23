@@ -15,6 +15,7 @@ function fonts.install -a name
       echo 'Fonts downloaded with success'
     else
       echo 'Failed downloading font file'
+      rm -rf $tmpdir
       return 1
     end
 
