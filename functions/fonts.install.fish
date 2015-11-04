@@ -1,12 +1,12 @@
 function fonts.install -a name
 
-  if not contains $name (__fonts.repo.list)
-    echo "Font $name not available for installing"
+  if test -e "$FONTS_CONFIG/$name"
+    echo "Font $name already installed"
     return 1
   end
 
-  if test -e "$FONTS_CONFIG/$name"
-    echo "Font $name already installed"
+  if not contains $name (__fonts.repo.list)
+    echo "Font $name not available for installing"
     return 1
   end
 
