@@ -19,7 +19,7 @@ function fonts.install -a name
       return 1
     end
 
-    basename $tmpdir/* > $FONTS_CONFIG/$name
+    basename -a $tmpdir/* > $FONTS_CONFIG/$name
 
     mkdir -p $FONTS_PATH
 

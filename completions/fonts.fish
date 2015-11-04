@@ -5,7 +5,7 @@ function __fonts_complete_install
 end
 
 function __fonts_complete_remove
-  basename $FONTS_CONFIG/*
+  basename -a $FONTS_CONFIG/*
 end
 
 complete -c fonts -f -d "Simple font manager"
