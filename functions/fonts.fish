@@ -2,7 +2,7 @@ function fonts -a action name -d "A simple font manager"
   switch "$action"
 
   case list
-    fonts.list
+    fonts.list $name
 
   case install
     if test -z "$name"

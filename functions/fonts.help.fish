@@ -6,6 +6,7 @@ function fonts.help
   echo '  fonts help'
   echo '  fonts install <name>'
   echo '  fonts remove <name>'
-  echo '  fonts list'
+  echo '  fonts list [--available | -a]'
+  echo '  fonts list [--installed | -i]'
 
 end
