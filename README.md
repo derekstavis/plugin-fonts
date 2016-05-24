@@ -23,10 +23,17 @@ To install a font:
 $ fonts install raleway
 ```
 
-To remove a font:
+To install a powerline font:
+
+```
+$ fonts install --powerline Inconsolata
+```
+
+To remove fonts:
 
 ```fish
 $ fonts remove raleway
+$ fonts remove Inconsolata
 ```
 
 To list all available fonts
@@ -35,9 +42,10 @@ To list all available fonts
 $ fonts list
 ```
 
-# Source
+# Font sources
 
-We actually use Google Fonts Github repository to fetch fonts.
+[Google Fonts][google-fonts] and [Powerline Fonts][powerline-fonts] Github
+repositories.
 
 # License
 
@@ -48,5 +56,8 @@ We actually use Google Fonts Github repository to fetch fonts.
 [author]:         http://github.com/derekstavis
 [contributors]:   https://github.com/derekstavis/pkg-fonts/graphs/contributors
 [omf-link]:       https://www.github.com/oh-my-fish/oh-my-fish
+
+[google-fonts]:    https://github.com/google/fonts
+[powerline-fonts]: https://github.com/powerline/fonts
 
 [license-badge]:  https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square
