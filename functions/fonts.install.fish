@@ -19,7 +19,13 @@ function fonts.install
   end
 
   if set tmpdir (mktemp -d "/tmp/font-$name.XXXXXX" ^&-)
-    if wget -P $tmpdir -q --show-progress -- (__fonts.repo.urls $name $filter)
+    if not set download_urls (__fonts.repo.urls $name $filter)
+      printf "No %s$name%s font found. Try using %s--powerline%s option.\n" \
+             (set_color -o) (set_color normal) (set_color -o) (set_color normal)
+      return 1
+    end
+
+    if wget -P $tmpdir -q --show-progress -- $download_urls
       echo 'Fonts downloaded with success'
     else
       echo 'Failed downloading font file'
@@ -34,6 +40,7 @@ function fonts.install
 
     if not mv $tmpdir/* $FONTS_PATH ^&-
       rm -rf $FONTS_CONFIG/$name
+      rm -rf $tmpdir
       echo 'Error installing font files'
       return 1
     end
