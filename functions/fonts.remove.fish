@@ -6,5 +6,5 @@ function fonts.remove -a name
   end
 
   rm -rv $FONTS_PATH/(cat $target)
-  rm -f $target ^&-
+  rm -f $target 2>&-
 end
