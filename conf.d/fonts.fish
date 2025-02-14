@@ -1,6 +1,3 @@
-set path $argv
-autoload $argv/functions/{config,repo}
-
 set -g __fonts_providers 'google' 'powerline'
 
 if not set -q FONTS_PATH
